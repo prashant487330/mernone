@@ -1,28 +1,27 @@
-import { BrowserRouter,Routes,Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./Pages/Home";
-import Display from "./Pages/Display";
-import Insert from "./Pages/Insert";
-import Update from "./Pages/Update";
-import Edit from "./Pages/Edit";
-import Search from "./Pages/Search";
-const App=()=>{
-  return(
-    <>
-    <BrowserRouter>
-     <Routes>
-      <Route path="/" element={<Layout/>}>
-        <Route index element={<Home/>}/>
-        <Route path="home" element={<Home/>}/>
-        <Route path="insert" element={<Insert/>}/>
-        <Route path="display" element={<Display/>}/>
-        <Route path="update" element={<Update/>}/>
-        <Route path="search" element={<Search/>}/>
-        <Route path="edit/:id" element={<Edit/>}/>
-      </Route>
-     </Routes>
-    </BrowserRouter>
-    </>
-  )
+import Registration from "./Pages/Registration";
+import Login from "./Pages/Login";
+import DashBoard from "./Pages/DashBoard";
+const App = () => {
+    return (
+        <>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Layout />}>
+                        <Route index element={<Home />} />
+                        <Route path="home" element={<Home />} />
+                        <Route path="registration" element={<Registration />} />
+                        <Route path="login" element={<Login />} />
+                    </Route>
+                </Routes>
+                <Routes>
+                    <Route path="dashboard" element={<DashBoard />}>
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </>
+    )
 }
 export default App;
